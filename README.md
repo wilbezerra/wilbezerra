@@ -65,16 +65,6 @@ Atualmente desenvolvendo projetos com identidade própria dentro do ecossistema 
 - GitHub: [@wilbezerra](https://github.com/wilbezerra)
 
 ---
-
-## ⚡ WSB TECH
-
-> Automação inteligente. Sem comprometer sua experiência.
-
-<div align="center">
-  <a href="https://github.com/wilbezerra">
-  <img height="42%" src="https://github-readme-stats.vercel.app/api?username=wilbezerra&show_icons=true&theme=dark&include_all_commits=true&count_private=true"/>
-  <img height="50%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=wilbezerra&layout=compact&langs_count=7&theme=dark"/>
-</div>
   
   ##
   
