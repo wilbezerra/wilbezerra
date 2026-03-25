@@ -1,13 +1,74 @@
-### Olá, Eu Sou Wilson Bezerra 👋
+<p align="center">
+  <img src="assets/wsb_banner.png" alt="Will Bezerra | WSB TECH Banner" width="100%"/>
+</p>
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
+# ⚡ Will Bezerra
+
+<p align="center">
+  <b>WSB TECH</b><br>
+  Automação • Suporte de TI • Programação • Eletrônica
+</p>
+
+---
+
+## 🚀 Sobre mim
+
+Sou focado em automação de sistemas Windows, suporte técnico, programação e soluções práticas em eletrônica.
+
+Atualmente desenvolvendo projetos com identidade própria dentro do ecossistema **WSB TECH**, com foco em ferramentas portáteis, manutenção inteligente e otimização segura.
+
+---
+
+## 🔥 Projetos em destaque
+
+- **WSB Auto Clean GE** — limpeza inteligente do Windows com preservação de logins
+- **WSB Flash Clean** — versão manual para limpeza sob demanda
+- **USB Repair System** — estrutura em evolução para diagnóstico e reparo USB (Imbutido nos projetos acima)
+
+---
+
+## 🧠 Áreas de atuação
+
+- Automação de rotinas no Windows
+- PowerShell
+- Suporte de TI
+- Programação
+- Eletrônica aplicada
+- Ferramentas portáteis e manutenção de sistema
+
+---
+
+## ⚙️ Tecnologias
+
+- PowerShell
+- Windows Internals
+- WMI
+- Task Scheduler
+- WinRT Toast Notifications
+
+---
+
+## 📊 GitHub Stats
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=wilbezerra&show_icons=true&theme=tokyonight" alt="GitHub Stats"/>
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=wilbezerra&layout=compact&theme=tokyonight" alt="Top Languages"/>
+</p>
+
+---
+
+## 📫 Contato
+
+- GitHub: [@wilbezerra](https://github.com/wilbezerra)
+
+---
+
+## ⚡ WSB TECH
+
+> Automação inteligente. Sem comprometer sua experiência.
 
 <div align="center">
   <a href="https://github.com/wilbezerra">
