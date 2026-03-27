@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WSB Auto Clean GE vs Flash Clean - Comparativo</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07090f;--bg2:#0d1117;--bg3:#111820;--border:#1e2d3d;--blue:#00c8ff;--orange:#ff8000;--green:#00e060;--red:#ff4020;--text:#d0dde8;--text-dim:#6a8090;--white:#f0f8ff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.7}
+.cover{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse 80% 60% at 50% 0%,#001a30 0%,var(--bg) 70%);border-bottom:1px solid var(--border);position:relative;overflow:hidden;padding:60px 20px}
+.cover h1{font-family:'Rajdhani',sans-serif;font-size:clamp(40px,8vw,80px);font-weight:700;color:var(--white);text-align:center;line-height:1;letter-spacing:2px}
+.cover h1 span{color:var(--blue)}
+.cover-sub{font-size:16px;color:var(--text-dim);margin-top:16px;text-align:center}
+.page{max-width:1200px;margin:0 auto;padding:80px 32px}
+.section{margin-bottom:80px}
+.section-title{font-family:'Rajdhani',sans-serif;font-size:36px;font-weight:700;color:var(--white);margin-bottom:8px}
+.section-title span{color:var(--blue)}
+.section-divider{height:1px;background:linear-gradient(90deg,var(--blue),transparent);margin:24px 0 36px}
+.card-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin:40px 0}
+.card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:32px;border-top:3px solid}
+.card.autoclean{border-top-color:var(--blue)}
+.card.flashclean{border-top-color:var(--orange)}
+.card-title{font-family:'Rajdhani',sans-serif;font-size:24px;font-weight:700;margin-bottom:8px}
+.card.autoclean .card-title{color:var(--blue)}
+.card.flashclean .card-title{color:var(--orange)}
+.card-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:12px;margin-top:16px}
+.card-list li{color:var(--text-dim);display:flex;gap:8px}
+.card-list li::before{content:'→ ';color:var(--blue);font-weight:700;flex-shrink:0}
+.card.flashclean .card-list li::before{color:var(--orange)}
+table{width:100%;border-collapse:collapse;margin:32px 0;background:var(--bg3);border-radius:8px;overflow:hidden}
+th{background:var(--bg2);border:1px solid var(--border);padding:16px;text-align:left;font-weight:600;color:var(--white);font-size:14px}
+td{padding:16px;border:1px solid var(--border);color:var(--text-dim);font-size:14px}
+tr:hover{background:rgba(0,200,255,.03)}
+.table-feature{color:var(--white);font-weight:500;min-width:180px}
+.table-autoclean{background:rgba(0,200,255,.05);text-align:center}
+.table-flashclean{background:rgba(255,128,0,.05);text-align:center}
+.check{color:var(--green);font-weight:700}
+.cross{color:var(--red);font-weight:700}
+.box{border-radius:8px;padding:20px 24px;margin:24px 0;background:rgba(0,200,255,.05);border:1px solid rgba(0,200,255,.15);border-left:3px solid var(--blue)}
+.box p{color:var(--text-dim);line-height:1.7}
+.recommendation{background:rgba(0,200,255,.05);border:1px solid rgba(0,200,255,.2);border-left:3px solid var(--blue);border-radius:8px;padding:24px;margin:32px 0}
+.recommendation.flashclean{background:rgba(255,128,0,.05);border-left-color:var(--orange)}
+.rec-title{font-family:'Rajdhani',sans-serif;font-size:16px;font-weight:700;margin-bottom:12px;color:var(--white)}
+.rec-text{color:var(--text-dim);line-height:1.7}
+.rec-text strong{color:var(--white)}
+.timeline{margin:32px 0;padding-left:32px;border-left:2px solid var(--border);display:flex;flex-direction:column;gap:20px}
+.event{position:relative}
+.event::before{content:'';position:absolute;left:-39px;top:6px;width:12px;height:12px;border-radius:50%;border:2px solid var(--bg);background:var(--blue)}
+.event.flashclean::before{background:var(--orange)}
+.event-title{font-weight:600;color:var(--white);margin-bottom:4px}
+.event-desc{font-size:13px;color:var(--text-dim)}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32px;text-align:center;color:var(--text-dim);margin-top:120px}
+@media(max-width:768px){.card-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>WSB <span>Auto Clean GE</span> vs <span>Flash Clean</span></h1>
+  <p class="cover-sub">Qual escolher? Conheça as diferenças</p>
+  <p class="cover-sub">Arquitetura híbrida de limpeza inteligente · AutoClean Engine</p>
+  <p style="color:var(--text-dim);margin-top:24px;font-size:13px;letter-spacing:2px;">v3.3.2 vs v3.1 · Desenvolvido por WSB TECH</p>
+</div>
+
+<div class="page">
+
+  <section class="section">
+    <h2 class="section-title">Os Dois <span>Programas</span></h2>
+    <div class="section-divider"></div>
+    <p style="color:var(--text-dim);margin-bottom:32px;">WSB Auto Clean GE e WSB Flash Clean são programas de limpeza do Windows com propósitos bem diferentes. Um é automático, o outro é manual.</p>
+
+    <div class="card-grid">
+      <div class="card autoclean">
+        <h3 class="card-title">🔵 Auto Clean GE v3.3.2</h3>
+        <ul class="card-list">
+          <li>Execução automática ao boot</li>
+          <li>Sentinela USB 24/7 em background</li>
+          <li>Toggle de ativação/desativação</li>
+          <li>Watchdog auto-reconexão (5 min)</li>
+          <li>Para quem quer "set and forget"</li>
+        </ul>
+      </div>
+
+      <div class="card flashclean">
+        <h3 class="card-title">🟠 Flash Clean v3.1</h3>
+        <ul class="card-list">
+          <li>Execução manual inteligente sob demanda</li>
+          <li>Sentinela USB instantâneo (herdado do AutoClean)</li>
+          <li>Bloqueio anti-execução simultânea</li>
+          <li>Limpeza inteligente preservando logins</li>
+          <li>Motor otimizado (30-60s)</li>
+          <li>Silent mode com Toast + Logs</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Comparativo <span>Técnico</span></h2>
+    <div class="section-divider"></div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Características</th>
+          <th class="table-autoclean">Auto Clean GE</th>
+          <th class="table-flashclean">Flash Clean</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="table-feature">Modo de Execução</td>
+          <td class="table-autoclean"><span class="check">Automático ao boot</span></td>
+          <td class="table-flashclean"><span class="check">Manual ao clicar</span></td>
+        </tr>
+        <tr>
+          <td class="table-feature">Ativação/Desativação</td>
+          <td class="table-autoclean"><span class="check">✓ Toggle</span></td>
+          <td class="table-flashclean"><span class="cross">✗ N/A</span></td>
+        </tr>
+        <tr>
+          <td class="table-feature">Sentinela USB</td>
+          <td class="table-autoclean"><span class="check">✓ 24/7</span></td>
+          <td class="table-flashclean"><span class="check">✓ On-click</span></td>
+        </tr>
+        <tr>
+          <td class="table-feature">Watchdog 5 Min</td>
+          <td class="table-autoclean"><span class="check">✓ Sim</span></td>
+          <td class="table-flashclean"><span class="cross">✗ Não</span></td>
+        </tr>
+        <tr>
+          <td class="table-feature">Sentinela Inteligente</td>
+          <td class="table-autoclean"><span class="check">✓ 24/7</span></td>
+          <td class="table-flashclean"><span class="check">✓ Instantâneo</span></td>
+        </tr>
+        <tr>
+          <td class="table-feature">Execução Concorrente</td>
+          <td class="table-autoclean"><span class="check"> ✓ Controlado Pelo Watchdog</span></td>
+          <td class="table-flashclean"><span class="check">✓ Bloqueia clique duplicado</span></td>
+        </tr>
+        <tr>
+          <td class="table-feature">Modo Silent</td>
+          <td class="table-autoclean"><span class="check">✓</span></td>
+          <td class="table-flashclean"><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="table-feature">Tipo</td>
+          <td class="table-autoclean"><span class="check">✓ Engine Console</span></td>
+          <td class="table-flashclean"><span class="check">✓ Silent Background</span></td>
+        </tr>
+         <tr>
+          <td class="table-feature">Notificações</td>
+          <td class="table-autoclean"><span class="check">✓ Toast</span></td>
+          <td class="table-flashclean"><span class="check">✓ Toast</span></td>
+        </tr>
+		<tr>
+          <td class="table-feature">Tempo de Execução</td>
+          <td class="table-autoclean"><span class="check">~2-3 Minutos </span></td>
+          <td class="table-flashclean"><span class="check">~30-60 Seg</span></td>
+        </tr>
+        <tr>
+          <td class="table-feature">Consumo de Recursos</td>
+          <td class="table-autoclean"><span class="check">✓ Mínimo</span></td>
+          <td class="table-flashclean"><span class="check">✓ Mínimo</span></td>
+        </tr>
+        <tr>
+          <td class="table-feature">Impacto no Boot</td>
+          <td class="table-autoclean"><span class="check">Aguarda Entorno de 20s</span></td>
+          <td class="table-flashclean"><span class="check">Alguns Segundos Após o Clique</span></td>
+        </tr>
+        <tr>
+          <td class="table-feature">LNK Startup</td>
+          <td class="table-autoclean"><span class="check">✓ Sim</span></td>
+          <td class="table-flashclean"><span class="cross">✗ Não</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Funcionalidades <span>Principais</span></h2>
+    <div class="section-divider"></div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Operações</th>
+          <th class="table-autoclean">Auto Clean</th>
+          <th class="table-flashclean">Flash Clean</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="table-feature">Otimização RAM</td><td class="table-autoclean"><span class="check">✓</span></td><td class="table-flashclean"><span class="check">✓</span></td></tr>
+        <tr><td class="table-feature">Limpeza Cache</td><td class="table-autoclean"><span class="check">✓</span></td><td class="table-flashclean"><span class="check">✓</span></td></tr>
+        <tr><td class="table-feature">Flush DNS</td><td class="table-autoclean"><span class="check">✓</span></td><td class="table-flashclean"><span class="check">✓</span></td></tr>
+        <tr><td class="table-feature">TRIM SSD</td><td class="table-autoclean"><span class="check">✓</span></td><td class="table-flashclean"><span class="check">✓</span></td></tr>
+        <tr><td class="table-feature">Limpeza Ícones</td><td class="table-autoclean"><span class="check">✓</span></td><td class="table-flashclean"><span class="check">✓</span></td></tr>
+        <tr><td class="table-feature">Varredura USB</td><td class="table-autoclean"><span class="check">✓</span></td><td class="table-flashclean"><span class="check">✓</span></td></tr>
+        <tr><td class="table-feature">Limpeza Inteligente de Apps</td><td class="table-autoclean"><span class="check">✓</span></td><td class="table-flashclean"><span class="check">✓</span></td></tr>
+        <tr><td class="table-feature">Scanner de Persistência USB</td><td class="table-autoclean"><span class="check">✓</span></td><td class="table-flashclean"><span class="check">✓</span></td></tr>
+        <tr><td class="table-feature">Quarentena de Malware USB</td><td class="table-autoclean"><span class="check">✓</span></td><td class="table-flashclean"><span class="check">✓</span></td></tr>
+        <tr><td class="table-feature">Restauração de Atributos</td><td class="table-autoclean"><span class="check">✓</span></td><td class="table-flashclean"><span class="check">✓</span></td></tr>
+        <tr><td class="table-feature">Banners GDI+</td><td class="table-autoclean"><span class="check">✓</span></td><td class="table-flashclean"><span class="check">✓</span></td></tr>
+        <tr><td class="table-feature">Sistema Logs</td><td class="table-autoclean"><span class="check">✓</span></td><td class="table-flashclean"><span class="check">✓</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="box" style="margin-top:24px;background:rgba(0,224,96,.05);border-left-color:var(--green);">
+      <p style="color:var(--green);font-weight:600;margin-bottom:8px;">✓ O que ambos fazem igual</p>
+      <p>Ambos compartilham a mesma base de limpeza segura, mas com estratégias diferentes. A diferença principal continua sendo <strong>QUANDO</strong> e <strong>COMO</strong>: Auto Clean atua de forma automática e contínua; Flash Clean executa sob demanda, agora com motor inteligente herdado do AutoClean.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Arquitetura <span>Inteligente</span></h2>
+    <div class="section-divider"></div>
+
+    <div class="box">
+      <p>
+        A partir da versão 3.1, o Flash Clean passou a incorporar partes do motor inteligente do Auto Clean GE v3.3.2.
+      </p>
+      <p style="margin-top:10px;">
+        Isso significa que ambos agora compartilham mecanismos internos de limpeza segura, preservação de sessões, sentinela USB e análise de persistências, mantendo a identidade de cada proposta.
+      </p>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Mecanismo Interno</th>
+          <th class="table-autoclean">Auto Clean</th>
+          <th class="table-flashclean">Flash Clean</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="table-feature">Motor de limpeza inteligente</td>
+          <td class="table-autoclean"><span class="check">✓</span></td>
+          <td class="table-flashclean"><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="table-feature">Sentinela de dispositivos USB</td>
+          <td class="table-autoclean"><span class="check">✓ Contínuo</span></td>
+          <td class="table-flashclean"><span class="check">✓ Sob demanda</span></td>
+        </tr>
+        <tr>
+          <td class="table-feature">Sistema de logs estruturados</td>
+          <td class="table-autoclean"><span class="check">✓</span></td>
+          <td class="table-flashclean"><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td class="table-feature">Proteção contra execução duplicada</td>
+          <td class="table-autoclean"><span class="check">✓</span></td>
+          <td class="table-flashclean"><span class="check">✓</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Quando Usar <span>Qual</span></h2>
+    <div class="section-divider"></div>
+
+    <div class="recommendation">
+      <h3 class="rec-title">🔵 Use Auto Clean GE se...</h3>
+      <p class="rec-text">
+        ✓ Quer "set and forget" — Ativa uma vez e esquece<br>
+        ✓ Quer proteção contínua — Sentinela 24/7<br>
+        ✓ Conecta pendrives frequentemente — Monitoramento automático<br>
+        ✓ Prefere não pensar em limpeza — Tudo automático<br>
+        ✓ Quer máxima conveniência — Zero intervenção<br>
+      </p>
+    </div>
+
+    <div class="recommendation flashclean">
+      <h3 class="rec-title">🟠 Use Flash Clean se...</h3>
+      <p class="rec-text">
+        ✓ Quer máximo controle — Você decide QUANDO<br>
+        ✓ Quer execução rápida com inteligência herdada — 30-60 segundos<br>
+        ✓ Não quer background contínuo — Tudo sob demanda<br>
+        ✓ Quer zero impacto no boot — Boot limpo<br>
+        ✓ Prefere simplicidade com segurança extra — Clique &amp; pronto<br>
+      </p>
+    </div>
+
+    <div class="box" style="margin-top:32px;">
+      <p style="margin-bottom:8px;"><strong style="color:var(--white);">💡 Dica: Use ambos juntos!</strong></p>
+      <p>Você pode usar ambos sem conflito. Use Auto Clean para automação contínua e Flash Clean para limpeza rápida sob demanda com a mesma filosofia de segurança e limpeza inteligente.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Fluxo de <span>Operação</span></h2>
+    <div class="section-divider"></div>
+
+    <p style="color:var(--white);font-weight:600;margin-bottom:16px;">Auto Clean GE — Automático ao Boot</p>
+    <div class="timeline">
+      <div class="event">
+        <div class="event-title">1. Windows inicia</div>
+        <div class="event-desc">Carrega o atalho da pasta Startup automaticamente</div>
+      </div>
+      <div class="event">
+        <div class="event-title">2. Aguarda 20s</div>
+        <div class="event-desc">Deixa o sistema estabilizar antes de começar</div>
+      </div>
+      <div class="event">
+        <div class="event-title">3. Executa operações</div>
+        <div class="event-desc">RAM → Cache → Ícones → Varredura USB (se houver)</div>
+      </div>
+      <div class="event">
+        <div class="event-title">4. Sentinela ativa</div>
+        <div class="event-desc">Monitora pendrives 24/7. Reconecta a cada 5 min se cair</div>
+      </div>
+    </div>
+
+    <p style="color:var(--white);font-weight:600;margin:40px 0 16px;">Flash Clean — Manual ao Clicar</p>
+    <div class="timeline">
+      <div class="event flashclean">
+        <div class="event-title">1. Você clica</div>
+        <div class="event-desc">Executa WSB_FLASH_CLEAN.exe e aprova UAC</div>
+      </div>
+      <div class="event flashclean">
+        <div class="event-title">2. Começa imediatamente</div>
+        <div class="event-desc">Sem delay. RAM → Cache inteligente → Limpeza de apps → Ícones → Scanner USB → Logs</div>
+      </div>
+      <div class="event flashclean">
+        <div class="event-title">3. Rápido</div>
+        <div class="event-desc">Tudo pronto em 30-60 segundos, com bloqueio de clique concorrente durante a execução</div>
+      </div>
+      <div class="event flashclean">
+        <div class="event-title">4. Encerra</div>
+        <div class="event-desc">Programa fecha em modo silent. Toast exibido, logs salvos e execução finalizada com segurança</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Segurança <span>Garantida</span></h2>
+    <div class="section-divider"></div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Privacidade &amp; Segurança</th>
+          <th class="table-autoclean">Auto Clean</th>
+          <th class="table-flashclean">Flash Clean</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="table-feature">Nunca remove senhas</td><td class="table-autoclean"><span class="check">✓</span></td><td class="table-flashclean"><span class="check">✓</span></td></tr>
+        <tr><td class="table-feature">Nunca remove cookies</td><td class="table-autoclean"><span class="check">✓</span></td><td class="table-flashclean"><span class="check">✓</span></td></tr>
+        <tr><td class="table-feature">Nunca remove tokens</td><td class="table-autoclean"><span class="check">✓</span></td><td class="table-flashclean"><span class="check">✓</span></td></tr>
+        <tr><td class="table-feature">100% offline</td><td class="table-autoclean"><span class="check">✓</span></td><td class="table-flashclean"><span class="check">✓</span></td></tr>
+        <tr><td class="table-feature">Sem telemetria</td><td class="table-autoclean"><span class="check">✓</span></td><td class="table-flashclean"><span class="check">✓</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="box" style="background:rgba(0,224,96,.05);border-left-color:var(--green);margin-top:24px;">
+      <p style="color:var(--green);font-weight:600;margin-bottom:8px;">✓ Privacidade Garantida</p>
+      <p>Ambos têm as mesmas garantias de privacidade. Nenhum dado é enviado, não há telemetria, tudo roda 100% offline e a limpeza inteligente evita apagar logins, cookies e tokens.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p><strong>WSB Auto Clean GE v3.3.2</strong> vs <strong>WSB Flash Clean v3.1</strong></p>
+  <p style="margin-top:8px;">Comparativo Completo · Desenvolvido por WSB TECH · 2026</p>
+</footer>
+
+</body>
+</html>
