@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <b style="font-size:18px;">WSB TECH</b><br>
+  <b style="font-size:18px;">WSB Flash Clean</b><br>
   <span style="font-size:13px;">by <b>Will Bezerra</b></span>
 </p>
 
