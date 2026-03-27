@@ -120,15 +120,22 @@ Public protected builds include:
 
 ```text
 WSB_Flash_Clean/
- ├── WSBFlashClean v3.1.ps1
- ├── WSBFlashClean v3.1(SAFE).ps1
- ├── WSBFlashClean v3.1(SAFE) - PUBLIC PROTECTED.ps1
- ├── WSBFlashClean v3.1 - AGGRESSIVE PUBLIC PROTECTED.ps1
- ├── wsb_flash_clean_v3.0.ico
- ├── build_wsb_flash_clean.bat
- ├── README.md
- ├── PRIVACY.md
- └── LICENSE.txt
+├── 📜 Core Scripts
+│   ├── WSBFlashClean v3.1.ps1
+│   ├── WSBFlashClean v3.1(SAFE).ps1
+│   ├── WSBFlashClean v3.1(SAFE) - PUBLIC PROTECTED.ps1
+│   └── WSBFlashClean v3.1 - AGGRESSIVE PUBLIC PROTECTED.ps1
+│
+├── ⚙️ Build & Execução
+│   └── build_wsb_flash_clean.bat
+│
+├── 🎨 Assets
+│   └── wsb_flash_clean_v3.0.ico
+│
+├── 📘 Documentação
+│   ├── README.md
+│   ├── PRIVACY.md
+│   └── LICENSE.txt
 ```
 
 ---
