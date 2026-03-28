@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/wsb_banner_git.png" alt="Will Bezerra | WSB TECH Banner" width="100%"/>
+  <img src="Assets/wsb_banner_git.png" alt="Will Bezerra | WSB TECH Banner" width="100%"/>
 </p>
 
 # ⚡ Will Bezerra
