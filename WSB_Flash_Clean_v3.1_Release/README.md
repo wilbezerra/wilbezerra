@@ -1,7 +1,7 @@
 # ⚡ WSB Flash Clean v3.1
 
 <p align="center">
-  <img src="Assets/wsb_flash_clean_v3.0.ico" width="180"/>
+  <img src="Assets/wsb_flash_clean.ico" width="180"/>
 </p>
 
 <p align="center">
