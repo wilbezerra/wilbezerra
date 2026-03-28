@@ -1,8 +1,8 @@
-name: Update GitHub Stats Cards
+name: Update GitHub Stats
 
 on:
   schedule:
-    - cron: "0 */12 * * *"
+    - cron: "0 6 * * *"
   workflow_dispatch:
 
 permissions:
@@ -11,27 +11,44 @@ permissions:
 jobs:
   update-stats:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Ensure assets directory exists
+      - name: Validate STATS_BASE_URL secret
+        run: |
+          if [ -z "${{ secrets.STATS_BASE_URL }}" ]; then
+            echo "STATS_BASE_URL secret is not set."
+            exit 1
+          fi
+
+      - name: Create assets directory
         run: mkdir -p assets
 
-      - name: Download self-hosted stats card
+      - name: Download GitHub stats SVG
         run: |
-          curl -L --fail \
-            "${{ secrets.STATS_BASE_URL }}/api?username=wilbezerra&show_icons=true&theme=tokyonight&hide_border=false" \
+          curl -L --fail --retry 3 \
+            "${{ secrets.STATS_BASE_URL }}/api?username=wilbezerra&show_icons=true&theme=tokyonight" \
             -o assets/github-stats.svg
 
-      - name: Download self-hosted top languages card
+      - name: Download top languages SVG
         run: |
-          curl -L --fail \
-            "${{ secrets.STATS_BASE_URL }}/api/top-langs/?username=wilbezerra&layout=compact&theme=tokyonight&hide_border=false" \
+          curl -L --fail --retry 3 \
+            "${{ secrets.STATS_BASE_URL }}/api/top-langs/?username=wilbezerra&layout=compact&theme=tokyonight" \
             -o assets/top-langs.svg
 
-      - name: Commit updated cards
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore: update GitHub stats cards"
-          file_pattern: assets/github-stats.svg assets/top-langs.svg
+      - name: Verify SVG files
+        run: |
+          test -s assets/github-stats.svg
+          test -s assets/top-langs.svg
+          grep -q "<svg" assets/github-stats.svg
+          grep -q "<svg" assets/top-langs.svg
+
+      - name: Commit updated stats
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/github-stats.svg assets/top-langs.svg
+          git diff --cached --quiet || git commit -m "chore: update GitHub stats"
+          git push
