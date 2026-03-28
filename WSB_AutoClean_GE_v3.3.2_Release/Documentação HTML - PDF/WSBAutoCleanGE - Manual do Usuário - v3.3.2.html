@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>WSB Auto Clean GE - Manual do Usuário v3.3.2 Atualizado</title>
+<style>
+body{font-family:Segoe UI,Arial,sans-serif;background:#0b1220;color:#d7e3ee;max-width:920px;margin:0 auto;padding:32px;line-height:1.65}
+h1,h2{color:#00c8ff} .box{background:#111a2b;border:1px solid #22425b;border-left:4px solid #00c8ff;padding:16px 18px;margin:18px 0;border-radius:8px}
+table{width:100%;border-collapse:collapse;margin:18px 0} th,td{border:1px solid #28465f;padding:10px 12px;vertical-align:top} th{background:#11304a;color:#fff}
+code{background:#122030;padding:2px 5px;border-radius:4px}
+</style></head><body>
+<h1>WSB AUTO CLEAN GE</h1>
+<p><em>Manual do Usuário atualizado - v3.3.2</em></p>
+<div class="box"><strong>Atualização principal:</strong> a documentação agora reflete a descoberta inteligente de cache, a proteção reforçada de perfis e a estratégia de release pública com verificação de integridade apenas na versão final disponibilizada ao público.</div>
+<h2>1. Visão geral</h2>
+<p>O aplicativo continua operando como utilitário portátil de clique único para ativar/desativar a automação. No boot, executa limpeza inteligente, reconstrução de ícones, sentinela USB e auto recuperação.</p>
+<table>
+<tr><th>Ação</th><th>Resultado</th></tr>
+<tr><td>Primeira execução manual</td><td>Ativa a automação e registra o estado.</td></tr>
+<tr><td>Nova execução manual</td><td>Desativa a automação e remove a persistência.</td></tr>
+<tr><td>Boot com modo ativo</td><td>Executa RAM + limpeza + ícones + USB + auto recuperação.</td></tr>
+</table>
+<h2>2. Melhorias implementadas</h2>
+<ul>
+<li>Descoberta automática de cache em <code>AppData</code> para aplicativos novos.</li>
+<li>Whitelist/blacklist para evitar danos em perfis, logins, storage e extensões.</li>
+<li>Proteção reforçada de Firefox, VS Code e apps Electron/Chromium.</li>
+<li>Refino da rotina de ícones para fechar apenas a primeira janela automática do Explorer após a reconstrução.</li>
+<li>Preparação documental da release pública com hash, log de violação e fallback seguro.</li>
+</ul>
+<h2>3. Preservação de autenticação</h2>
+<p>Senhas, cookies, tokens persistidos, sessões, Local State e preferências críticas permanecem preservados.</p>
+<h2>4. Release pública</h2>
+<p>A proteção de integridade foi reservada somente à versão pública para GitHub. A base de desenvolvimento continua editável.</p>
+</body></html>
