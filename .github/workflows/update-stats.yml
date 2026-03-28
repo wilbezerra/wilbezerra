@@ -1,0 +1,37 @@
+name: Update GitHub Stats Cards
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Ensure assets directory exists
+        run: mkdir -p assets
+
+      - name: Download self-hosted stats card
+        run: |
+          curl -L --fail \
+            "${{ secrets.STATS_BASE_URL }}/api?username=wilbezerra&show_icons=true&theme=tokyonight&hide_border=false" \
+            -o assets/github-stats.svg
+
+      - name: Download self-hosted top languages card
+        run: |
+          curl -L --fail \
+            "${{ secrets.STATS_BASE_URL }}/api/top-langs/?username=wilbezerra&layout=compact&theme=tokyonight&hide_border=false" \
+            -o assets/top-langs.svg
+
+      - name: Commit updated cards
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update GitHub stats cards"
+          file_pattern: assets/github-stats.svg assets/top-langs.svg
