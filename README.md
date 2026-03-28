@@ -9,7 +9,7 @@
   Automação • Suporte de TI • Programação • Eletrônica
 </p>
 
----
+--- 
 
 ## 🚀 Sobre mim
 
@@ -63,17 +63,11 @@ Atualmente desenvolvendo projetos com identidade própria dentro do ecossistema 
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img
-    src="https://github-readme-stats.vercel.app/api?username=wilbezerra&show_icons=true&theme=tokyonight&cache_seconds=86400"
-    alt="GitHub Stats"
-  />
+  <img src="https://github-readme-stats.vercel.app/api?username=wilbezerra&show_icons=true&theme=tokyonight" alt="GitHub Stats"/>
 </p>
 
 <p align="center">
-  <img
-    src="https://github-readme-stats.vercel.app/api/top-langs/?username=wilbezerra&layout=compact&theme=tokyonight&cache_seconds=86400"
-    alt="Top Languages"
-  />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=wilbezerra&layout=compact&theme=tokyonight" alt="Top Languages"/>
 </p>
 ---
 
