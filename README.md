@@ -69,6 +69,7 @@ Atualmente desenvolvendo projetos com identidade própria dentro do ecossistema 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=wilbezerra&layout=compact&theme=tokyonight" alt="Top Languages"/>
 </p>
+
 ---
 
 ## 📫 Contato
